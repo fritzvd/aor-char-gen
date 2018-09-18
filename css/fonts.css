@@ -1,0 +1,9 @@
+@font-face {
+    src: url(/assets/teuton-mager.ttf);
+    font-family: 'teuton mager';
+}
+
+@font-face {
+    src: url(/assets/teuton-mager-bold.ttf);
+    font-family: 'teuton mager bold';
+}
