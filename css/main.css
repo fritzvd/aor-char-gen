@@ -18,7 +18,7 @@ a {
 }
 
 .sheet {
-    background: url(/assets/logo_footer.png) no-repeat right bottom / 179px 239px;
+    background: url(../assets/logo_footer.png) no-repeat right bottom / 179px 239px;
     background-color: #efece8;
     box-shadow: 0 0 .5rem .25rem rgba(0,0,0,.2);
     margin: 4rem auto;
