@@ -7,3 +7,178 @@
     src: url(../assets/teuton-mager-bold.ttf);
     font-family: 'teuton mager bold';
 }
+
+@font-face {
+    src: url('../assets/sw-rpg-icons.ttf');
+    font-family: 'sw-rpg-icons';
+}
+
+.icon {
+    font-family: 'sw-rpg-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #111;
+    position: relative;
+    line-height: 1em !important;
+    display: inline-block;
+    font-size: 1.1em;
+    top: 2px
+}
+
+.icon:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #111
+}
+
+.ability {
+    color: #52B849
+}
+
+.ability:before {
+    content: ""
+}
+
+.ability:after {
+    content: ""
+}
+
+.proficiency {
+    color: #FEE800
+}
+
+.proficiency:before {
+    content: ""
+}
+
+.proficiency:after {
+    content: ""
+}
+
+.setback {
+    font-size: 1em;
+    color: #413C42
+}
+
+.setback:before {
+    content: ""
+}
+
+.setback:after {
+    content: ""
+}
+
+.boost {
+    font-size: 1em;
+    color: #A0D9F5
+}
+
+.boost:before {
+    content: ""
+}
+
+.boost:after {
+    content: ""
+}
+
+.challenge {
+    color: #E21D37
+}
+
+.challenge:before {
+    content: ""
+}
+
+.challenge:after {
+    content: ""
+}
+
+.difficulty {
+    color: #512C7D
+}
+
+.difficulty:before {
+    content: ""
+}
+
+.difficulty:after {
+    content: ""
+}
+
+.force {
+    color: white
+}
+
+.force:before {
+    content: ""
+}
+
+.force:after {
+    content: ""
+}
+
+.lightside {
+    color: white
+}
+
+.lightside:before {
+    content: ""
+}
+
+.lightside:after {
+    content: ""
+}
+
+.darkside {
+    color: #413C42
+}
+
+.darkside:before {
+    content: ""
+}
+
+.darkside:after {
+    content: ""
+}
+
+.forcepip {
+    color: white
+}
+
+.forcepip:before {
+    content: ""
+}
+
+.forcepip:after {
+    content: ""
+}
+
+.advantage:before {
+    content: "î¤¶"
+}
+
+.failure:before {
+    content: "î¤»"
+}
+
+.success:before {
+    content: "î¥"
+}
+
+.threat:before {
+    content: "î¥ƒ"
+}
+
+.triumph:before {
+    content: "î¥…"
+}
+
+.despair:before {
+    content: "î¤º"
+}

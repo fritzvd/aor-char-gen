@@ -5,9 +5,10 @@
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/fonts.css">
         <meta charset="utf-8">
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </head>
     <body>
-        <div class="sheet">
+        <div id="v-app-sheet" class="sheet">
             <header class="flex justifyBetween">
                 <div class="player">
                     <h1>Player</h1>
@@ -30,29 +31,9 @@
                         <div>
                             <h1 class="title">Characteristics</h1>
                             <div class="grid">
-                                <div class="attribute">
-                                    <input type="text" maxlength="3">
-                                    <div class="title">Brawn</div>
-                                </div>
-                                <div class="attribute">
-                                    <input type="text" maxlength="3">
-                                    <div class="title">Agility</div>
-                                </div>
-                                <div class="attribute">
-                                    <input type="text" maxlength="3">
-                                    <div class="title">Intellect</div>
-                                </div>
-                                <div class="attribute">
-                                    <input type="text" maxlength="3">
-                                    <div class="title">Cunning</div>
-                                </div>
-                                <div class="attribute">
-                                    <input type="text" maxlength="3">
-                                    <div class="title">Willpower</div>
-                                </div>
-                                <div class="attribute">
-                                    <input type="text" maxlength="3">
-                                    <div class="title">Presence</div>
+                                <div v-for="characteristic in characteristics" class="attribute">
+                                    <input type="text" maxlength="3" v-model="characteristic.score">
+                                    <div class="title">{{characteristic.name}}</div>
                                 </div>
                             </div>
                         </div>
@@ -69,119 +50,21 @@
                 <div class="table">
                     <div class="headers">
                         <div class="col">General Skills</div>
+                        <div class="col">Dice Pool</div>
                         <div class="col">Career?</div>
-                        <div class="col">Rank</div>
+                        <div class="col">Ranks</div>
                     </div>
                     <div class="content">
-                        <div class="row">
-                            <div class="col">Astrogation (Int)</div>
+                        <div class="row" v-for="skill in skills">
+                            <div class="col">{{skill.name}}</div>
+                            <div class="col">
+                                <dice-pool
+                                    :skill="parseInt(skill.rank)"
+                                    :ability="parseInt(characteristics.find(c => c.id === skill.characteristic).score) || 0">
+                                </dice-pool>
+                               </div>
                             <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Athletics (Br)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Charm (Pr)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Coercion (Will)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Computers (Int)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Cool (Pr)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Coordination (Ag)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Deception (Cun)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Discipline (Will)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Leadership (Pr)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Mechanics (Int)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Medicine (Int)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Negotiation (Pr)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Perception (Cun)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Piloting - Planetary (Ag)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Piloting - Space (Ag)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Resilience (Br)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Skulduggery (Cun)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Stealth (Ag)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Streetwise (Cun)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Survival (Cun)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col">Vigilance (Will)</div>
-                            <div class="col"></div>
-                            <div class="col"></div>
+                            <div class="col"><input type="text" maxlength="3" v-model="skill.rank"></div>
                         </div>
                     </div>
                 </div>
@@ -191,5 +74,7 @@
             </footer>
         </div>
         <script src="js/generator.js"></script>
+        <script src="./js/app.js"></script>
+
     </body>
 </html>
